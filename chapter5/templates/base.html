@@ -1,0 +1,16 @@
+{% load static %}
+<html>
+    <head>
+        <title>
+            Chapter 5
+        </title>
+        <link href="{% static 'css/base.css' %}" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <h2 class="ca">Blog app</h2>
+        </header>
+        {% block content %}
+        {% endblock content %}
+    </body>
+</html>
