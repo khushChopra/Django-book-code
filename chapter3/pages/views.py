@@ -8,3 +8,6 @@ class Hello_world(TemplateView):
 
 class AboutView(TemplateView):
     template_name = "about.html"
+
+def KhushView(request):
+    return HttpResponse("Khush here holaaaaa")
