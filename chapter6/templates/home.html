@@ -1,9 +1,20 @@
 {% extends 'base.html' %}
 
 {% block content %}
+{% if user.is_authenticated %}
+Hi {{ user.username }}
+<a href="{% url 'logout' %}">logout</a>
+{% else %}
+log in please
+<a href="{% url 'login' %}">login</a>
+<a href="{% url 'signup' %}">sign up</a>
+
+{% endif %}
+
+
 {% for post in object_list %}
 <hr>
-<a href={% url 'detail' post.id %}><h4>{{ post.title }}</h4></a>
+<a href="{% url 'detail' post.id %}"><h4>{{ post.title }}</h4></a>
 <h5>by {{ post.author }}</h5>
 <br>
 {% endfor %}
